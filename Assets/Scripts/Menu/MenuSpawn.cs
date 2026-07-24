@@ -3,6 +3,7 @@ using Unity.VisualScripting;
 using UnityEditor;
 using UnityEditor.Purchasing;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class MenuSpawn : MonoBehaviour
 {
@@ -43,17 +44,42 @@ public class MenuSpawn : MonoBehaviour
 	{
 		if (Input.GetKeyDown(KeyCode.P) && pausa.activeSelf == false) 
 		{
-			Debug.Log("Activado");
 			pausa.SetActive(true);
 			ui.SetActive(false);
+			Time.timeScale = 0f;
+			Cursor.lockState = CursorLockMode.None;
 		}
 		else if (Input.GetKeyDown(KeyCode.P) && pausa.activeSelf == true)
 		{
-			Debug.Log("Desactivado");
 			pausa.SetActive(false);
 			ui.SetActive(true);
 			aviso.SetActive(true);
 			controles.SetActive(false);
+			Time.timeScale = 1f;
+			Cursor.lockState = CursorLockMode.Locked;
 		}
+	}
+
+	public void VolverAlJuego()
+	{
+		Debug.Log("Boton1");
+		pausa.SetActive(false);
+		ui.SetActive(true);
+		aviso.SetActive(true);
+		controles.SetActive(false);
+		Time.timeScale = 1f;
+		Cursor.lockState = CursorLockMode.Locked;
+	}
+	
+	public void SalirAlMenu() 
+	{
+		Debug.Log("Boton2");
+		SceneManager.LoadScene("MainMenu");
+	}
+
+	public void SalirDelJueo() 
+	{
+		Debug.Log("Boton3");
+		Application.Quit();
 	}
 }
