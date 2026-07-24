@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class Monocromatico : MonoBehaviour
 {
-    public float _RadioColor = 1.0f;
+    public float _RadioColor = 0f;
     public Material[] materiales;
 
     void Update()
