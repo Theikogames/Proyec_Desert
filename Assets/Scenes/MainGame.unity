@@ -1790,10 +1790,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _color: {fileID: 1722999609}
-  reclicar: 0
+  reclicar: 1
   gradienteColor: 0
   objetoGradienteColor: 0
-  velocidadPorSegundo: 1
+  velocidadPorSegundo: 3
 --- !u!1 &1069604081
 GameObject:
   m_ObjectHideFlags: 0
@@ -2326,6 +2326,18 @@ PrefabInstance:
       value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 5159902553275456537, guid: 969a8a96cc301e4408d526143f66773c, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 5159902553275456537, guid: 969a8a96cc301e4408d526143f66773c, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 5159902553275456537, guid: 969a8a96cc301e4408d526143f66773c, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 5159902553275456537, guid: 969a8a96cc301e4408d526143f66773c, type: 3}
       propertyPath: m_LocalPosition.x
       value: -1863
       objectReference: {fileID: 0}
@@ -2364,6 +2376,10 @@ PrefabInstance:
     - target: {fileID: 5159902553275456537, guid: 969a8a96cc301e4408d526143f66773c, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5159902553275456537, guid: 969a8a96cc301e4408d526143f66773c, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7103352622251821132, guid: 969a8a96cc301e4408d526143f66773c, type: 3}
       propertyPath: m_Enabled
@@ -2808,7 +2824,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e0965250e92ec974da200a3f9702ddee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _RadioColor: 0
+  _RadioColor: 10
   materiales:
   - {fileID: 2100000, guid: 21f7d056027961846b2913808c37f36b, type: 2}
   - {fileID: 2100000, guid: fc96c44b68947c441a16c280768a8212, type: 2}
