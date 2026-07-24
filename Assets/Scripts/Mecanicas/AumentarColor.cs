@@ -22,7 +22,7 @@ public class AumentarColor : MonoBehaviour
 	{
 		if (reclicar) 
         {
-            objetoGradienteColor += 1f;
+            objetoGradienteColor += 3f;
             reclicar = false;
         }
         gradienteColor = Mathf.MoveTowards(gradienteColor, objetoGradienteColor, velocidadPorSegundo * Time.deltaTime);
