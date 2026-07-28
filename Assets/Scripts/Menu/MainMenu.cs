@@ -1,3 +1,4 @@
+using System.ComponentModel.Design;
 using TMPro;
 using Unity.VisualScripting;
 using UnityEditor;
@@ -5,26 +6,13 @@ using UnityEditor.Purchasing;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class MenuSpawn : MonoBehaviour
+public class MainMenu : MonoBehaviour
 {
-	
 	public GameObject aviso, controles, pausa, ui;
 
-	private void Start()
-	{
-		ui.SetActive(true);
-		aviso.SetActive(true);
-		controles.SetActive(false);
-		pausa.SetActive(false);
-	}
+	public GameObject opciones, menuPrincipal;
 
-	private void Update()
-	{
-		MenuControles();
-		MenuPausa();
-	}
-
-	public void MenuControles() 
+	public void _MenuControles() 
 	{
 		if (Input.GetKeyDown(KeyCode.C) && aviso.activeSelf == true && pausa.activeSelf == false) 
 		{
@@ -40,7 +28,7 @@ public class MenuSpawn : MonoBehaviour
 		}
 	}
 
-	public void MenuPausa() 
+	public void _MenuPausa() 
 	{
 		if (Input.GetKeyDown(KeyCode.P) && pausa.activeSelf == false) 
 		{
@@ -60,9 +48,8 @@ public class MenuSpawn : MonoBehaviour
 		}
 	}
 
-	public void VolverAlJuego()
+	public void _VolverAlJuego()
 	{
-		Debug.Log("Boton1");
 		pausa.SetActive(false);
 		ui.SetActive(true);
 		aviso.SetActive(true);
@@ -71,15 +58,32 @@ public class MenuSpawn : MonoBehaviour
 		Cursor.lockState = CursorLockMode.Locked;
 	}
 	
-	public void SalirAlMenu() 
+	public void _SalirAlMenu() 
 	{
-		Debug.Log("Boton2");
 		SceneManager.LoadScene("MainMenu");
 	}
 
-	public void SalirDelJueo() 
+	public void _IrAlJuego()
 	{
-		Debug.Log("Boton3");
+		SceneManager.LoadScene("MainGame");
+	}
+
+	public void _SalirDelJuego() 
+	{
 		Application.Quit();
+	}
+
+	public void _Opciones()
+	{
+		if (opciones.activeSelf == false && menuPrincipal.activeSelf == true)
+		{
+			opciones.SetActive(true);
+			menuPrincipal.SetActive(false);
+		}
+		else if (opciones.activeSelf == true && menuPrincipal.activeSelf == false)
+		{
+			opciones.SetActive(false);
+			menuPrincipal.SetActive(true);
+		}
 	}
 }
