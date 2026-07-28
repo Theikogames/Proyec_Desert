@@ -1449,8 +1449,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1722999612}
-        m_TargetAssemblyTypeName: MenuSpawn, Assembly-CSharp
-        m_MethodName: SalirAlMenu
+        m_TargetAssemblyTypeName: MainMenu, Assembly-CSharp
+        m_MethodName: _SalirAlMenu
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1587,8 +1587,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1722999612}
-        m_TargetAssemblyTypeName: MenuSpawn, Assembly-CSharp
-        m_MethodName: VolverAlJuego
+        m_TargetAssemblyTypeName: MainMenu, Assembly-CSharp
+        m_MethodName: _VolverAlJuego
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1661,7 +1661,7 @@ Transform:
   m_GameObject: {fileID: 787345585}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
-  m_LocalPosition: {x: -75, y: -25, z: 0}
+  m_LocalPosition: {x: -75, y: 9, z: 0}
   m_LocalScale: {x: 15.000001, y: 15.000001, z: 15.000001}
   m_ConstrainProportionsScale: 1
   m_Children:
@@ -2066,8 +2066,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1722999612}
-        m_TargetAssemblyTypeName: MenuSpawn, Assembly-CSharp
-        m_MethodName: SalirDelJueo
+        m_TargetAssemblyTypeName: MainMenu, Assembly-CSharp
+        m_MethodName: _SalirDelJuego
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2140,7 +2140,7 @@ Transform:
   m_GameObject: {fileID: 1187314702}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1553, y: -756, z: -416}
+  m_LocalPosition: {x: -1553, y: -722, z: -416}
   m_LocalScale: {x: 20.938375, y: 20.938375, z: 20.938375}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -2327,15 +2327,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5159902553275456537, guid: 969a8a96cc301e4408d526143f66773c, type: 3}
       propertyPath: m_LocalScale.x
-      value: 15
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5159902553275456537, guid: 969a8a96cc301e4408d526143f66773c, type: 3}
       propertyPath: m_LocalScale.y
-      value: 15
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5159902553275456537, guid: 969a8a96cc301e4408d526143f66773c, type: 3}
       propertyPath: m_LocalScale.z
-      value: 15
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5159902553275456537, guid: 969a8a96cc301e4408d526143f66773c, type: 3}
       propertyPath: m_LocalPosition.x
@@ -2343,7 +2343,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5159902553275456537, guid: 969a8a96cc301e4408d526143f66773c, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 16.6
+      value: 2.11
       objectReference: {fileID: 0}
     - target: {fileID: 5159902553275456537, guid: 969a8a96cc301e4408d526143f66773c, type: 3}
       propertyPath: m_LocalPosition.z
@@ -2804,6 +2804,7 @@ GameObject:
   - component: {fileID: 1722999610}
   - component: {fileID: 1722999609}
   - component: {fileID: 1722999611}
+  - component: {fileID: 1722999613}
   - component: {fileID: 1722999612}
   m_Layer: 0
   m_Name: MainScript
@@ -2873,6 +2874,21 @@ MonoBehaviour:
   controles: {fileID: 1069604081}
   pausa: {fileID: 540643726}
   ui: {fileID: 495219363}
+  opciones: {fileID: 0}
+  menuPrincipal: {fileID: 0}
+--- !u!114 &1722999613
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1722999608}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 913ad3cbc5b130d46ab1aad399e58294, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::MGControl
+  msc: {fileID: 1722999612}
 --- !u!1 &1779591761
 GameObject:
   m_ObjectHideFlags: 0
@@ -3586,7 +3602,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4679996124110637746, guid: 21fc5abf5d3b65948a60f09b7f003d77, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -33.4
+      value: 0.5999985
       objectReference: {fileID: 0}
     - target: {fileID: 4679996124110637746, guid: 21fc5abf5d3b65948a60f09b7f003d77, type: 3}
       propertyPath: m_LocalPosition.z
