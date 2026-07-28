@@ -7,10 +7,12 @@ public class MGControl : MonoBehaviour
 
 	private void Start()
 	{
+		Time.timeScale = 1;
 		msc.ui.SetActive(true);
 		msc.aviso.SetActive(true);
 		msc.controles.SetActive(false);
 		msc.pausa.SetActive(false);
+		msc.StartCoroutine(msc.TextoTutorial());
 	}
 
 	private void Update()

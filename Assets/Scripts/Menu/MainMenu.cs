@@ -1,3 +1,4 @@
+using System.Collections;
 using System.ComponentModel.Design;
 using TMPro;
 using Unity.VisualScripting;
@@ -8,21 +9,21 @@ using UnityEngine.SceneManagement;
 
 public class MainMenu : MonoBehaviour
 {
-	public GameObject aviso, controles, pausa, ui;
+	public GameObject aviso, controles, pausa, ui, tutorial1, tutorial2;
 
 	public GameObject opciones, menuPrincipal;
+
+	public bool interaccion = false;
 
 	public void _MenuControles() 
 	{
 		if (Input.GetKeyDown(KeyCode.C) && aviso.activeSelf == true && pausa.activeSelf == false) 
 		{
-			Debug.Log("Activado");
 			aviso.SetActive(false);
 			controles.SetActive(true);
 		}
 		else if (Input.GetKeyDown(KeyCode.C) && aviso.activeSelf == false && pausa.activeSelf == false) 
 		{
-			Debug.Log("Desactivado");
 			aviso.SetActive(true);
 			controles.SetActive(false);
 		}
@@ -84,6 +85,17 @@ public class MainMenu : MonoBehaviour
 		{
 			opciones.SetActive(false);
 			menuPrincipal.SetActive(true);
+		}
+	}
+
+	public IEnumerator TextoTutorial() 
+	{
+		yield return new WaitForSeconds(10f);
+
+		if(interaccion == false) 
+		{
+			tutorial1.SetActive(true);
+			interaccion = true;
 		}
 	}
 }

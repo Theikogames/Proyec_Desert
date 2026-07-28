@@ -1,0 +1,60 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5b11a58205ec3474ca216360e9fa74a8, type: 3}
+  m_Name: StringTableMG Shared Data
+  m_EditorClassIdentifier: Unity.Localization::UnityEngine.Localization.Tables.SharedTableData
+  m_TableCollectionName: StringTableMG
+  m_TableCollectionNameGuidString: 9907b712339d1e04c851ba086360b874
+  m_Entries:
+  - m_Id: 1860012482560
+    m_Key: Presionar C
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2131761438720
+    m_Key: Controles
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2312691130368
+    m_Key: Pausa
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2392802336768
+    m_Key: Volver al juego
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2506153402368
+    m_Key: Salir al menu
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2618984374272
+    m_Key: Salir del juego
+    m_Metadata:
+      m_Items: []
+  - m_Id: 242369398185984
+    m_Key: tutorialMecanicas
+    m_Metadata:
+      m_Items: []
+  - m_Id: 252521371279360
+    m_Key: TutorialQueHacer
+    m_Metadata:
+      m_Items: []
+  m_Metadata:
+    m_Items: []
+  m_KeyGenerator:
+    rid: 1992059521494679756
+  references:
+    version: 2
+    RefIds:
+    - rid: 1992059521494679756
+      type: {class: DistributedUIDGenerator, ns: UnityEngine.Localization.Tables, asm: Unity.Localization}
+      data:
+        m_CustomEpoch: 1785215011480
