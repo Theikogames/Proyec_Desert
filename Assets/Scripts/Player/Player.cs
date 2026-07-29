@@ -89,7 +89,7 @@ public class PlayerMovement : MonoBehaviour
             {
                 grabObject();
                 
-                if(interaccion.agarroObjeto == false) 
+                if(interaccion.agarroObjeto == false && heldObject != null) 
                 { 
                     interaccion.agarroObjeto = true;
                     interaccion.StopCoroutine(interaccion.TutorialUnoAyuda());
