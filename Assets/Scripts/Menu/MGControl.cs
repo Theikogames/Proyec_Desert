@@ -32,7 +32,6 @@ public class MGControl : MonoBehaviour
 		{
 			interaccion.TerminarTutorial();
 			interaccion.controlarMetodo1 = true;
-			Debug.Log("as");
 		}
 	}
 
