@@ -164,7 +164,7 @@ public class PlayerMovement : MonoBehaviour
         if (rb != null)
         {
             rb.isKinematic = false; // Restaurar física
-            rb.AddForce(transform.forward * 3f, ForceMode.Impulse); // Aplicar una pequeña fuerza hacia adelante al soltar
+            rb.AddForce(transform.forward * 100f, ForceMode.Impulse); // Aplicar una pequeña fuerza hacia adelante al soltar
         }
 
         if (ObjetoOriginal != null)

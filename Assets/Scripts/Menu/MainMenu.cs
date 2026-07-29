@@ -16,6 +16,7 @@ public class MainMenu : MonoBehaviour
 
 	public bool agarroObjeto = false;
 	public bool ultimoTutorial = false;
+	public bool terminarTutorial = false;
 
 	public void _MenuControles() 
 	{
@@ -92,7 +93,7 @@ public class MainMenu : MonoBehaviour
 
 	public IEnumerator TutorialUnoAyuda() 
 	{
-		yield return new WaitForSeconds(1f);
+		yield return new WaitForSeconds(0f);
 		Debug.Log("Inicio TutorialUnoAyuda");
 		yield return new WaitForSeconds(30f);
 
@@ -107,7 +108,7 @@ public class MainMenu : MonoBehaviour
 
 	public IEnumerator TutorialDos() 
 	{
-		yield return new WaitForSeconds(1f);
+		yield return new WaitForSeconds(0f);
 		Debug.Log("TutorialDos()");
 		if (agarroObjeto == true && ultimoTutorial == false)
 		{

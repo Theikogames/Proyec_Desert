@@ -613,8 +613,13 @@ MonoBehaviour:
   controles: {fileID: 0}
   pausa: {fileID: 0}
   ui: {fileID: 0}
+  tutorial1: {fileID: 0}
+  tutorial2: {fileID: 0}
   opciones: {fileID: 837084779}
   menuPrincipal: {fileID: 1927557969}
+  agarroObjeto: 0
+  ultimoTutorial: 0
+  terminarTutorial: 0
 --- !u!114 &556919004
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2680,7 +2685,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1927557970
 MonoBehaviour:
   m_ObjectHideFlags: 0
