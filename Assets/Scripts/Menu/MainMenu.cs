@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.ComponentModel.Design;
 using TMPro;
@@ -13,7 +14,8 @@ public class MainMenu : MonoBehaviour
 
 	public GameObject opciones, menuPrincipal;
 
-	public bool interaccion = false;
+	public bool agarroObjeto = false;
+	public bool ultimoTutorial = false;
 
 	public void _MenuControles() 
 	{
@@ -88,14 +90,33 @@ public class MainMenu : MonoBehaviour
 		}
 	}
 
-	public IEnumerator TextoTutorial() 
+	public IEnumerator TutorialUnoAyuda() 
 	{
-		yield return new WaitForSeconds(10f);
+		yield return new WaitForSeconds(1f);
+		Debug.Log("Inicio TutorialUnoAyuda");
+		yield return new WaitForSeconds(30f);
 
-		if(interaccion == false) 
+		if(agarroObjeto == false) 
 		{
 			tutorial1.SetActive(true);
-			interaccion = true;
+			agarroObjeto = true;
+			StartCoroutine(TutorialDos());
 		}
+		yield break;
+	}
+
+	public IEnumerator TutorialDos() 
+	{
+		yield return new WaitForSeconds(1f);
+		Debug.Log("TutorialDos()");
+		if (agarroObjeto == true && ultimoTutorial == false)
+		{
+			yield return new WaitForSeconds(30f);
+
+			tutorial1.SetActive(false);
+			tutorial2.SetActive(true);
+			ultimoTutorial = true;
+		}
+		yield break;
 	}
 }

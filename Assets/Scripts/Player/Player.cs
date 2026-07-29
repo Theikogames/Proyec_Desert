@@ -6,6 +6,8 @@ public class PlayerMovement : MonoBehaviour
 {
     private CharacterController controller;
 
+    public MainMenu interaccion;
+
     [Header("Movimiento")]
     public float speed = 12f;
     public float gravity = -9.81f;
@@ -86,10 +88,18 @@ public class PlayerMovement : MonoBehaviour
             if (heldObject == null)
             {
                 grabObject();
+                
+                if(interaccion.agarroObjeto == false) 
+                { 
+                    interaccion.agarroObjeto = true;
+                    interaccion.StopCoroutine(interaccion.TutorialUnoAyuda());
+					interaccion.StartCoroutine(interaccion.TutorialDos());
+				} 
+                
             }
             else
             {
-                releaseObject();
+                releaseObject();                   
             }
         }
     }
