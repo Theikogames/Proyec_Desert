@@ -9,7 +9,7 @@ public class SumonPolera : MonoBehaviour
         // Sumonear al presionar la tecla Espacio
         if (Input.GetKeyDown(KeyCode.L))
         {
-            Vector3 posicionDeseada = new Vector3(0, 10, 0);
+            Vector3 posicionDeseada = new Vector3(23.456f, 1.5f, -7.523f);
 
             Instantiate(objetoPrefab, posicionDeseada, Quaternion.identity);
         }

@@ -3,6 +3,7 @@ using static UnityEditor.ShaderData;
 
 public class MGControl : MonoBehaviour
 {
+	public MainMenu interaccion;
 	public MainMenu msc;
 
 	private void Start()
@@ -19,6 +20,19 @@ public class MGControl : MonoBehaviour
 	{
 		msc._MenuControles();
 		msc._MenuPausa();
+
+		if (interaccion.agarroObjeto == true && interaccion.controlarMetodo2 == false)
+		{
+			interaccion.StopCoroutine(interaccion.TutorialUnoAyuda());
+			interaccion.StartCoroutine(interaccion.TutorialDos());
+			interaccion.controlarMetodo2 = true;
+		}
+
+		if (interaccion.agarroObjeto == true && interaccion.ultimoTutorial == true && interaccion.terminarTutorial == false && interaccion.controlarMetodo1 == false)
+		{
+			interaccion.TerminarTutorial();
+			interaccion.controlarMetodo1 = true;
+		}
 	}
 
 }

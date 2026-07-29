@@ -17,6 +17,8 @@ public class MainMenu : MonoBehaviour
 	public bool agarroObjeto = false;
 	public bool ultimoTutorial = false;
 	public bool terminarTutorial = false;
+	public bool controlarMetodo1 = false;
+	public bool controlarMetodo2 = false;
 
 	public void _MenuControles() 
 	{
@@ -119,5 +121,17 @@ public class MainMenu : MonoBehaviour
 			ultimoTutorial = true;
 		}
 		yield break;
+	}
+
+	public void TerminarTutorial()
+	{
+		if (agarroObjeto == true && ultimoTutorial == true && terminarTutorial == false)
+		{
+			tutorial1.SetActive(false);
+			tutorial2.SetActive(false);
+			StopCoroutine(TutorialDos());
+			terminarTutorial = true;
+			Debug.Log("tutorial terminado");
+		}
 	}
 }

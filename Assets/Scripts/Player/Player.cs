@@ -1,3 +1,4 @@
+using System.Threading;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -88,13 +89,11 @@ public class PlayerMovement : MonoBehaviour
             if (heldObject == null)
             {
                 grabObject();
-                
-                if(interaccion.agarroObjeto == false && heldObject != null) 
-                { 
+
+                if(interaccion.agarroObjeto == false) 
+                {
                     interaccion.agarroObjeto = true;
-                    interaccion.StopCoroutine(interaccion.TutorialUnoAyuda());
-					interaccion.StartCoroutine(interaccion.TutorialDos());
-				} 
+                }
                 
             }
             else
