@@ -27,11 +27,12 @@ public class PlayerMovement : MonoBehaviour
     private bool isGrounded;
     private Vector2 moveInput;
     [Header("Objeto agarrado")]
-    private GameObject heldObject; // Objeto actualmente agarrado
+    public GameObject heldObject; // Objeto actualmente agarrado
+     public Transform origenRayo; // Origen del rayo para detectar objetos
+    public GameObject RopaOrdenada;
+    [Header("Objeto que vuelve al original")]
+    public GameObject ObjetoOriginal;
 
-    public Transform origenRayo; // Origen del rayo para detectar objetos
-
-    public float Lanzamiento; //numero de lanzamiento
 
     void Start()
     {
@@ -43,6 +44,7 @@ public class PlayerMovement : MonoBehaviour
         // 1. Verificar si estamos tocando el suelo
         isGrounded = Physics.CheckSphere(groundCheck.position, groundDistance, groundMask);
 
+        //dibujar un gizmo en la escena para ver el radio de deteccion de suelo
         if (isGrounded && velocity.y < 0)
         {
             velocity.y = -2f; // Mantiene al personaje pegado al suelo
@@ -101,25 +103,41 @@ public class PlayerMovement : MonoBehaviour
         Ray ray = new Ray(origenRayo.position, origenRayo.forward);
         RaycastHit hit;
 
+        /*RECUERDA EL ORDEN PARA UN RAYO: Ray(origen,direccion,out hit (la informacion si hay colision),distancia, capa) para dibujarlo en la escena y depurarlo, usamos 
+        Debug.DrawRay(origen,direccion,distancia,Color,)*/
         Debug.DrawRay(ray.origin, ray.direction * grabDistance, Color.green, 1f); // Dibuja el rayo en la escena para depuración
 
         if (Physics.Raycast(ray, out hit, grabDistance))
         {
             GameObject targetObj = hit.collider.gameObject;
-            if (targetObj.layer == LayerMask.NameToLayer("Grabbable"))
+
+            if (targetObj.layer == LayerMask.NameToLayer("Polera")) // Verificamos si el objeto tiene la capa "Polera"
             {
-                // Agarrar el objeto
-                heldObject = targetObj;
+                ObjetoOriginal = targetObj;
+                targetObj.SetActive(false);
+
+                if (RopaOrdenada != null)
+                {
+                    heldObject = Instantiate(RopaOrdenada, targetObj.transform.position, targetObj.transform.rotation);
+                }
+                else
+                {
+                    Debug.LogWarning("No se ha asignado el prefab RopaOrdenada.");
+                    return;
+                }
+
                 Rigidbody rb = heldObject.GetComponent<Rigidbody>();
-                
                 if (rb != null)
                 {
                     rb.isKinematic = true; // Hacer el objeto cinemático para que se mueva con el jugador
                 }
-                
-                heldObject.transform.SetParent(grabPoint);
-                heldObject.transform.localPosition = Vector3.zero;
-                heldObject.transform.localRotation = Quaternion.identity;
+
+                if (grabPoint != null)
+                {
+                    heldObject.transform.SetParent(grabPoint);
+                    heldObject.transform.localPosition = Vector3.zero;
+                    heldObject.transform.localRotation = Quaternion.identity;
+                }
             }
         }
     }
@@ -131,15 +149,31 @@ public class PlayerMovement : MonoBehaviour
 
         // Soltar el objeto
         heldObject.transform.SetParent(null);
-        
+
         Rigidbody rb = heldObject.GetComponent<Rigidbody>();
         if (rb != null)
         {
             rb.isKinematic = false; // Restaurar física
-
-            rb.AddForce(transform.forward * Lanzamiento, ForceMode.Impulse); // Aplicar una pequeña fuerza hacia adelante al soltar
+            rb.AddForce(transform.forward * 3f, ForceMode.Impulse); // Aplicar una pequeña fuerza hacia adelante al soltar
         }
-        
+
+        if (ObjetoOriginal != null)
+        {
+            ObjetoOriginal.transform.position = heldObject.transform.position;
+            ObjetoOriginal.transform.rotation = heldObject.transform.rotation;
+            ObjetoOriginal.SetActive(true);
+        }
+
+        Destroy(heldObject);
         heldObject = null;
+    }
+
+    private void OnDrawGizmos()
+    {
+        Gizmos.color = Color.red;
+        // Dibujar un gizmo para saber si estamos tocando el suelo
+        Gizmos.DrawSphere(groundCheck.position, groundDistance);
+
+        
     }
 }

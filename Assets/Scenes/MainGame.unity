@@ -4415,8 +4415,11 @@ MonoBehaviour:
   controles: {fileID: 1069604081}
   pausa: {fileID: 540643726}
   ui: {fileID: 495219363}
+  tutorial1: {fileID: 0}
+  tutorial2: {fileID: 0}
   opciones: {fileID: 0}
   menuPrincipal: {fileID: 0}
+  interaccion: 0
 --- !u!114 &1722999613
 MonoBehaviour:
   m_ObjectHideFlags: 0
