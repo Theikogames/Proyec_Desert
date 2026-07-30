@@ -116,23 +116,26 @@ public class MainMenu : MonoBehaviour
 		{
 			yield return new WaitForSeconds(30f);
 
-
+			if (ultimoTutorial == false)
+			{
 				tutorial1.SetActive(false);
 				tutorial2.SetActive(true);
-				ultimoTutorial = true;
+			}
+			/*
+			yield return new WaitForSeconds(5f);
+
+			ultimoTutorial = true;
+			*/
 		}
 		yield break;
 	}
 
 	public void TerminarTutorial()
 	{
-		if (agarroObjeto == true && ultimoTutorial == true && terminarTutorial == false)
-		{
-			tutorial1.SetActive(false);
-			tutorial2.SetActive(false);
-			StopCoroutine(TutorialDos());
-			terminarTutorial = true;
-			Debug.Log("tutorial terminado");
-		}
+		tutorial1.SetActive(false);
+		tutorial2.SetActive(false);
+		StopCoroutine(TutorialDos());
+		terminarTutorial = true;
+		Debug.Log("tutorial terminado");
 	}
 }
