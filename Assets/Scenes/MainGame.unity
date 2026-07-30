@@ -7762,7 +7762,7 @@ MonoBehaviour:
   Planta: {fileID: 5201639205813837726, guid: 465c9bd0de6b6ad4cab8a8d11556463f, type: 3}
   PlantaEdificio: {fileID: 5201639205813837726, guid: 465c9bd0de6b6ad4cab8a8d11556463f, type: 3}
   polerasParaGenerar: 1
-  plantasAlAzar: 120
+  plantasAlAzar: 90
   capaTerreno:
     serializedVersion: 2
     m_Bits: 8
@@ -17915,7 +17915,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2021574359}
   m_Layer: 0
-  m_Name: Murallas
+  m_Name: murallas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
