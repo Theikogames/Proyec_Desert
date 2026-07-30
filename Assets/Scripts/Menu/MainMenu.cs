@@ -116,9 +116,12 @@ public class MainMenu : MonoBehaviour
 		{
 			yield return new WaitForSeconds(30f);
 
-			tutorial1.SetActive(false);
-			tutorial2.SetActive(true);
-			ultimoTutorial = true;
+			if (ultimoTutorial == false)
+			{
+				tutorial1.SetActive(false);
+				tutorial2.SetActive(true);
+				ultimoTutorial = true;
+			}
 		}
 		yield break;
 	}
