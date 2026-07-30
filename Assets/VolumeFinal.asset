@@ -77,7 +77,7 @@ MonoBehaviour:
   active: 1
   temperature:
     m_OverrideState: 1
-    m_Value: -1.9
+    m_Value: 29
   tint:
     m_OverrideState: 0
     m_Value: 0
@@ -143,7 +143,7 @@ MonoBehaviour:
   active: 1
   mode:
     m_OverrideState: 1
-    m_Value: 2
+    m_Value: 1
   neutralHDRRangeReductionMode:
     m_OverrideState: 0
     m_Value: 2
@@ -212,7 +212,7 @@ MonoBehaviour:
     m_Value: 0
   intensity:
     m_OverrideState: 1
-    m_Value: 0.917
+    m_Value: 0.839
   response:
     m_OverrideState: 1
     m_Value: 0.659
@@ -401,16 +401,16 @@ MonoBehaviour:
     m_Value: 0
   contrast:
     m_OverrideState: 1
-    m_Value: 2
+    m_Value: 11
   colorFilter:
     m_OverrideState: 0
-    m_Value: {r: 1, g: 1, b: 1, a: 1}
+    m_Value: {r: 0.990566, g: 0.990566, b: 0.990566, a: 1}
   hueShift:
     m_OverrideState: 1
     m_Value: 0
   saturation:
     m_OverrideState: 1
-    m_Value: 2.9
+    m_Value: 1
 --- !u!114 &8300071289355934210
 MonoBehaviour:
   m_ObjectHideFlags: 3
@@ -425,5 +425,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: Unity.RenderPipelines.Universal.Runtime::UnityEngine.Rendering.Universal.ChromaticAberration
   active: 1
   intensity:
-    m_OverrideState: 0
-    m_Value: 0
+    m_OverrideState: 1
+    m_Value: 0.053
