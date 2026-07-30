@@ -41,7 +41,7 @@ public class CambioNatural : MonoBehaviour
     {
         if (other.CompareTag("Polera"))
         {
-            targetGradientecolor += 5f;
+            targetGradientecolor += 2f;
             //reciclar = true; // Activamos la variable reciclar al colisionar con un objeto con el tag "Polera"
             contadorPoleras++;
             Destroy(other.gameObject);
@@ -71,6 +71,7 @@ public class CambioNatural : MonoBehaviour
 
     void InstanciarPlantas()
     {
+        Vector3 centro = (centroCirculo != null) ? centroCirculo.position : transform.position;
         for(int i = 0; i < plantasAlAzar; i++)
         {
             Vector2 Aleatorio = Random.insideUnitCircle * targetGradientecolor;
